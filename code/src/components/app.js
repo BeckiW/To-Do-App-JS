@@ -1,7 +1,7 @@
 import React from "react"
-import TodoList from "./todoList"
+import TodoList from "../toDoList"
 import "./style.scss"
-import CompletedTask from "./CompletedTask"
+import CompletedTask from "../CompletedTask"
 
 
 class App extends React.Component {
@@ -41,13 +41,19 @@ handleSubmit = (event) => {
     this.updateLocalStorage(updatedTasks);
   }
 
-  removeTask = (task) => {
-    let removeTasks = this.state.tasks;
-    updatedTasks.splice(updatedTasks.indexOf(task),1);
-    this.setState({tasks:updatedTasks});
-    this.updateLocalStorage(updatedTasks);
-    this.finishTask(task);
-  }
+  removeItem = (removeItemID) => {
+    const listUpdate = this.state.toDoItems
+      .filter(item => {
+        return item.id !== removeItemID
+      })
+    this.setState({
+      items: listUpdate
+    }, () => {
+      const dataToStorage = JSON.stringify(this.state.items)
+      localStorage.setItem("toDoList", dataToStorage)
+      this.handleSearch(this.state.searchString)
+    })
+}
 
   endTask = (task) => {
     let endTasks = this.state.end;
@@ -92,7 +98,7 @@ endLocalStorage(endTasks){
 
               <div className="button">
               	<h3>To Do List</h3>
-              		<ToDoList tasks = {this.state.tasks} remove= {this.removeTask} />
+              		<TodoList tasks = {this.state.tasks} remove= {this.removeTask} />
               </div>
 
               <div className="button">

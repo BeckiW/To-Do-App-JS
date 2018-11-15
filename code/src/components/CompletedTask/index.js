@@ -7,14 +7,14 @@ class CompletedTask extends Component{
 	render(){
 		return(
 			<ul className="list-group">{
-                        {this.props.items.map(item => (
-                            return(
-                                <li key={item.id} className="finished-item">
-                                    <span>{item.text}</span>
-                                </li>
-                            )
-                        })
-                       }</ul>
+          {this.props.items.map(item => (
+              return(
+                <li key={item.id} className="finished-item">
+                    <span>{item.text}</span>
+                </li>
+            )
+            })
+      }</ul>
 		);
 	}
 }
