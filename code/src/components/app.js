@@ -1,6 +1,7 @@
 import React from "react"
 import AddItem from "./AddItem"
 import ToDoItem from "./ToDoItem"
+import "./style.css"
 
 class App extends React.Component {
 
@@ -83,7 +84,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
-        <h1>Things I should do...</h1>
+        <h1>Have you forgotten something?</h1>
+        < hr />
         <AddItem onAddItem={this.addItem} />
 
         {this.state.todoList.sort((a, b) => {

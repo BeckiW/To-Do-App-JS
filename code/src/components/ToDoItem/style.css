@@ -1,0 +1,30 @@
+.list-item {
+  padding: 20px;
+  text-align: left;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.list-item button {
+  font-size: 20px;
+  display: inline;
+  padding: 10px;
+  background-color: rgba(255,255,255,0);
+  border: 3px solid rgba(255,255,255,0);
+}
+
+.list-item .left button {
+  text-align: left;
+}
+
+
+.list-item button.done {
+  text-decoration: line-through;
+  width: 100%;
+  color: gray;
+}
+
+.list-item button.urgent {
+  color: #C71585;
+}
