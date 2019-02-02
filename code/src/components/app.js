@@ -27,8 +27,7 @@ class App extends React.Component {
     })
   }
 
-  // useful if the component has a chance to unmount -
-  // which it currently does not!
+
   componentWillUnmount() {
     // remove event listener
     window.removeEventListener(
