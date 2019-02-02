@@ -44,7 +44,6 @@ class App extends React.Component {
   }
 
   addItem = (newItem, newDeadline) => {
-    //let daysToDeadline
     if (newDeadline) {
       this.daysToDeadline = Math.floor((new Date(newDeadline) - new Date()) /
       (1000 * 60 * 60 * 24) + 1)
@@ -84,27 +83,32 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
-        <h1>Have you forgotten something?</h1>
-        < hr />
-        <AddItem onAddItem={this.addItem} />
+        <div className="appHeader">
+          <div className="appHeaderContent">
+            <h1>Have you forgotten something?</h1>
+          </div>
+        </div>
+        <div className="appBody">
+          <AddItem onAddItem={this.addItem} />
 
-        {this.state.todoList.sort((a, b) => {
-          if (b.daysToDeadline < a.daysToDeadline) {
-            return 1
-          } else if (b.daysToDeadline > a.daysToDeadline) {
-            return -1
-          } else {
-            return 0
-          }
-        }).map((item, index) => {
-          return <ToDoItem
-            key={index}
-            id={index}
-            value={item.task}
-            daysToDeadline={item.daysToDeadline}
-            onDoneButtonClick={this.updateDone}
-            onRemoveButtonClick={this.removeItem} />
-        })}
+          {this.state.todoList.sort((a, b) => {
+            if (b.daysToDeadline < a.daysToDeadline) {
+              return 1
+            } else if (b.daysToDeadline > a.daysToDeadline) {
+              return -1
+            } else {
+              return 0
+            }
+          }).map((item, index) => {
+            return <ToDoItem
+              key={index}
+              id={index}
+              value={item.task}
+              daysToDeadline={item.daysToDeadline}
+              onDoneButtonClick={this.updateDone}
+              onRemoveButtonClick={this.removeItem} />
+          })}
+        </div>
       </div>
     )
   }

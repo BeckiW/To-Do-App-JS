@@ -46,7 +46,6 @@ class AddItem extends React.Component {
       <div className="add">
         <input type="text" value={this.state.todoItem} placeholder="New task" onChange={event => this.setState({ todoItem: event.target.value.toString() })} />
         <DayPickerInput placeholder="Deadline (optional)" clickUnselectsDay={true} onDayChange={this.handleDayChange} />
-        <p>(Click on a item again to clear it from the list)</p>
         <button type="button" onClick={this.handleClick}>Add</button>
         <p>{this.state.message}</p>
       </div>

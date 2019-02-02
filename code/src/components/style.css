@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Montserrat');
+
 body {
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
   font-family: sans-serif;
+  background: #eee;
 }
 
 p {
@@ -10,10 +13,8 @@ p {
 
 .app {
   width: 100%;
-  margin: 10px auto;
-  padding: 20px;
+  margin: 0px;
   text-align: center;
-  background-image: linear-gradient(#845EC2, #D65DB1);
 }
 
 @media (max-width: 600px) {
@@ -21,4 +22,41 @@ p {
     width: 100%;
     margin: 0px;
   }
+}
+
+h1 {
+  margin: 0px;
+}
+
+.appHeader {
+  height: 200px;
+  padding: 20px;
+  color: white;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
+  font-weight: normal;
+  font-family: "Montserrat";
+  overflow: hidden;
+  position: relative;
+  z-index:1;
+  overflow:hidden; /*if you want to crop the image*/
+  background-color: rgba(80, 150, 220, 1.0);
+  border-bottom: solid 6px #fff;
+}
+
+.appHeader:before{
+    z-index:-1;
+    position:absolute;
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+    content: "";
+    background-image: url('/header-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity:0.3;
+}
+
+.appHeaderContent {
+  padding-top: 120px;
 }

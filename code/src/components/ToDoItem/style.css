@@ -22,7 +22,7 @@
 .list-item button.done {
   text-decoration: line-through;
   width: 100%;
-  color: gray;
+  color: darkgray;
 }
 
 .list-item button.urgent {
