@@ -4,10 +4,11 @@
   "private": true,
   "dependencies": {
     "eslint-config-technigo": "^1.4.0",
+    "node-sass": "^4.9.4",
     "react": "^16.0.0",
+    "react-day-picker": "^7.2.4",
     "react-dom": "^16.0.0",
-    "react-scripts": "2.0.4",
-    "node-sass": "^4.9.4"
+    "react-scripts": "2.0.4"
   },
   "scripts": {
     "start": "react-scripts start",
