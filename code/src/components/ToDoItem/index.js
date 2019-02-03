@@ -57,7 +57,7 @@ class Item extends React.Component {
             onClick={this.setDone}>{this.props.value} {todoDayText}
           </button>
         </div>
-        <button onClick={this.removeItem}><i className="fas fa-minus"></i></button>
+        <button onClick={this.removeItem}><div className="delete"><img src={'minus.png'} width="30" height="30" /></div></button>
       </div>
     )
   }
