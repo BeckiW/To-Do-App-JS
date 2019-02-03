@@ -60,3 +60,9 @@ h1 {
 .appHeaderContent {
   padding-top: 120px;
 }
+
+
+.appBody {
+  width: 60%;
+  margin: 0 auto;
+}
